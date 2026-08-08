@@ -2,37 +2,37 @@ import ProjectCard from "./ProjectCard";
 
 const PROJECTS = [
   {
-    title: "Analytics Dashboard",
+    title: "MediQueue - Tutor Booking System",
     description:
-      "Real-time data visualization platform with customizable widgets and JWT authentication.",
-    tags: ["React", "Node.js", "JWT"],
+      "A premium, full-stack academic mentorship and session booking platform designed for medical students to explore, book, and manage tutoring sessions with qualified instructors. Built with Next.js 16 (App Router), React 19, and Tailwind CSS v4, this application provides a modern, fast, and responsive user experience. Authentication is fully powered by Better Auth with a MongoDB Adapter, supporting both credential-based logins and Google Social Authentication..",
+    tags: ["React", "Node.js", "MongoDB", "Better Aught"],
     image:
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuCSize1ShzH_X59AuEARVvCAe7hsl4IF_R-x51bga5tKT7Xl8e-gZtfHhQjbOIS3DsM8gf3kOllihohyuuE_FnSrEOEX6ajWDTVCgvSJwGIrMeH6e9ddRVqPKzP2WZMZwBG2TRBJO1A_LKhixGkEDlVfKf4jiwEJXWFUxXZNy2nliJOM6J7GU-j10-kPQzBgIPa3UeFT2OiHt8nNS3JVSZSCkuwD1FkaMnMnbmHayByn3yctLcdnL92",
+      "https://i.ibb.co.com/BKYFYWFP/Screenshot-2026-08-08-141256.png",
     alt: "A sleek, dark-mode dashboard interface showing data visualizations and analytics charts. The aesthetic is highly technical, using deep blacks, stark whites, and neon blue accents, resembling a high-end SaaS product or developer tool. The lighting is clean and crisp.",
-    repoUrl: "https://github.com",
-    demoUrl: "https://github.com",
+    repoUrl: "https://github.com/shuvro18/Tutor-Booking-Website",
+    demoUrl: "https://tutor-booking-system-zeta.vercel.app",
   },
   {
-    title: "E-Commerce Engine",
+    title: "SummerCART — Summer Essentials Store",
     description:
-      "Headless e-commerce backend with a fully responsive storefront and Stripe integration.",
-    tags: ["MongoDB", "Express", "Redux"],
+      "SummerCART is a modern, responsive, and feature-rich e-commerce web application tailored for summer essentials. Built on top of the latest Next.js framework with React 19, it utilizes Better-Auth for secure authentication (including email/password and Google OAuth), MongoDB for database persistence, and a premium design system powered by Tailwind CSS v4, DaisyUI v5, and HeroUI..",
+    tags: ["MongoDB", "Better-Auth", "Next.js", "React Toastify", "HeroUI"],
     image:
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuAVMACUWfFB-Bd50XRJTO7gOCGBc5YijwCwSqLwyQCNPmtpxGtIoK2rXIKFbsqn9wKNNk4O6ndEOP_wyI1w_xrHUa_wPl0Binpx-wTMAC_mHmhqlIYQdp2lRFw9i4Ymfcz5zhZ8EyC1hzzZTxUdoVYKVQLgKU8bCcp7gJoq210d1t7iOuJKp3MB7J_Sr2HLDxtBq8lBLvaaC8SUDxSPLmjeHx5knQcEZAN6DmdwiERmkiiQrW_VY96R",
+      "https://i.ibb.co.com/Z1xkWjRh/Screenshot-2026-08-08-142420.png",
     alt: "A sophisticated e-commerce checkout flow displayed on a dark background. The UI features minimalist form fields with subtle glowing borders, an order summary section, and a prominent 'Complete Purchase' button. The style is modern, technical, and precise, utilizing shades of dark gray and a vibrant primary accent color.",
-    repoUrl: "https://github.com",
-    demoUrl: "https://github.com",
+    repoUrl: "https://github.com/shuvro18/summercart-summer-essentials-store",
+    demoUrl: "https://summercart-summer-essentials-store-dusky.vercel.app/",
   },
   {
-    title: "Collab Space",
+    title: "KeenKeeper - Keep Your Friendship Alive",
     description:
-      "Real-time collaborative workspace utilizing WebSockets for instant updates across clients.",
-    tags: ["Socket.io", "React", "Tailwind"],
+      "KeenKeeper is a personal relationship management dashboard designed to help you nurture and maintain meaningful connections with your friends. It tracks your interactions and provides visual insights to ensure no important relationship is neglected.",
+    tags: ["React Router", "React.js","Recharts", "Tailwind", "DaisyUI"],
     image:
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuCLBp-BfzAmr-FR__OqAsZ_jDr-ybH5vYN_0O3qqpgqAgVUAa85jm9l2RIx-GpF8LccZsfYXwu9GMshAKdhXfXqm6PmunAF8LbHzv_QLgVcT6d_zunK09u5tN5uBWt9vK2ZK1FYIG3jAxAKaiHSGhbU0uTGpqGLXi2yPxpGrxg_s-dECaLqdUe83ky188Bn9oQ262Og91aNga9IIodERmwP8n9oYjKC7We1QrjONIqlwZMyKVyO4ULY",
+      "https://i.ibb.co.com/Pzs3t4vG/Screenshot-2026-08-08-143255.png",
     alt: "A dark-mode collaborative text editor interface. The screen shows multiple cursors with different colors editing code simultaneously. The overall mood is focused and technical, with a dark slate background and high-contrast typography, characteristic of a professional IDE environment.",
-    repoUrl: "https://github.com",
-    demoUrl: "https://github.com",
+    repoUrl: " https://github.com/shuvro18/-KeenKeeper-Keep-Your-Friendships-Alive-A7",
+    demoUrl: "https://keenkeeper-friends-a7.netlify.app/",
   },
 ];
 

@@ -11,9 +11,9 @@ export default function ProjectCard({
   demoUrl,
 }) {
   return (
-    <div className="bg-surface border border-outline-variant rounded overflow-hidden group">
+    <div className=" w-full bg-surface border border-outline-variant rounded overflow-hidden group">
       <div
-        className="h-48 bg-surface-variant w-full bg-cover bg-center"
+        className="h-68 bg-surface-variant w-full bg-cover bg-center"
         data-alt={alt}
         style={{ backgroundImage: `url("${image}")` }}
       ></div>
@@ -21,7 +21,7 @@ export default function ProjectCard({
         <h3 className="font-headline-sm text-[24px] font-semibold text-on-surface">
           {title}
         </h3>
-        <p className="font-body-md text-body-md text-on-surface-variant line-clamp-2">
+        <p className="font-body-md text-body-md text-on-surface-variant line-clamp-3">
           {description}
         </p>
         <div className="flex flex-wrap gap-2">
