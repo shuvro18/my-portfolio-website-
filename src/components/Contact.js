@@ -73,7 +73,7 @@ export default function Contact() {
         id="contact"
       >
         <div className="max-w-max-width mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-gutter items-start">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-gutter items-center">
             <div className="space-y-8">
               <div className="space-y-4">
                 <span className="font-label-mono text-label-mono text-primary tracking-widest uppercase">

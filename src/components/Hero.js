@@ -1,3 +1,5 @@
+import Marquee from "./Marquee";
+
 export default function Hero() {
   return (
     <div>
@@ -96,6 +98,8 @@ export default function Hero() {
           </div>
         </div>
       </section>
+
+      <Marquee/>
       
     </div>
   );
