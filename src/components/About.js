@@ -62,15 +62,13 @@ export default function About() {
               for payment systems.
             </p>
             <p className="text-on-surface-variant leading-relaxed">
-              While I'm yet to take on professional client work, I've been actively
-              building projects to sharpen my skills and demonstrate what I'm capable
-              of. I believe <strong className="text-on-surface">the best time to start is now</strong>,
-              and every project I build brings me one step closer to my dream career.
+              I might be new to professional client projects, but I’ve been consistently building and experimenting to master my craft. For me <strong className="text-on-surface">the right time to start is right now,</strong>,
+              and every single project gets me one step closer to my ultimate career goals.
             </p>
             <p className="text-on-surface-variant leading-relaxed">
-              I'm eager to collaborate, contribute to real-world projects, and grow as
-              a developer. If you're looking for someone who is{" "}
-              <strong className="text-on-surface">motivated, quick to learn, and genuinely passionate</strong>{" "}
+              I'm always looking forward to
+              <strong className="text-on-surface"> collaborating on meaningful projects</strong> and 
+              <strong className="text-on-surface"> leveling up my development skills</strong> If you're searching for a quick learner who is deeply passionate about tech, let's connect
               — let's connect!
             </p>
           </div>
