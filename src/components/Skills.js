@@ -13,14 +13,14 @@ const BACKEND_SKILLS = [
   { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg", alt: "Node.js", name: "Node.js", category: "Runtime" },
   { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg", alt: "Express", name: "Express", category: "Framework", invert: true },
   { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg", alt: "MongoDB", name: "MongoDB", category: "Database" },
-  { src: "https://www.betterauth.com/favicon.ico", alt: "BetterAuth", name: "BetterAuth", category: "Auth Library" },
+  { src: "https://svgl.app/library/better-auth_dark.svg", alt: "BetterAuth", name: "BetterAuth", category: "Auth Library" },
   { src: "https://jwt.io/img/pic_logo.svg", alt: "JWT", name: "JWT", category: "Auth Protocol" },
 ];
 
 const TOOLS_SKILLS = [
   { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg", alt: "Figma", name: "Figma", category: "UI Design" },
   { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg", alt: "GitHub", name: "Git / GitHub", category: "Versioning", invert: true },
-  { src: "https://www.netlify.com/v3/img/components/logomark.svg", alt: "Netlify", name: "Netlify", category: "Hosting" },
+  { src: "https://cdn.simpleicons.org/netlify", alt: "Netlify", name: "Netlify", category: "Hosting" },
   { src: "https://assets.vercel.com/image/upload/v1588805858/repositories/vercel/logo.png", alt: "Vercel", name: "Vercel", category: "Deployment", invert: true },
   { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg", alt: "VS Code", name: "VS Code", category: "Dev Tools" },
 ];
