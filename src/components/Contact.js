@@ -4,13 +4,24 @@ import { useState, useEffect } from "react";
 import Toast from "./Toast";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import Link from "next/link";
+import emailjs from "@emailjs/browser";
+
+// Set these up at https://www.emailjs.com (free tier is fine):
+// 1. Add an Email Service connected to shuvrobiswas404@gmail.com
+// 2. Create an Email Template with variables: from_name, from_email, subject, message
+// 3. Paste the 3 IDs below into .env.local (see the keys used here)
+const SERVICE_ID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
+const TEMPLATE_ID = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
+const PUBLIC_KEY = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY;
 
 export default function Contact() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
+    subject: "",
     message: "",
   });
+  const [status, setStatus] = useState("idle"); // idle | sending | success | error
   const [showToast, setShowToast] = useState(false);
 
   const handleInputChange = (e) => {
@@ -18,12 +29,34 @@ export default function Contact() {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    if (!formData.name || !formData.email || !formData.message) return;
+    if (!formData.name || !formData.email || !formData.subject || !formData.message) return;
 
-    setFormData({ name: "", email: "", message: "" });
-    setShowToast(true);
+    setStatus("sending");
+
+    try {
+      await emailjs.send(
+        SERVICE_ID,
+        TEMPLATE_ID,
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          subject: formData.subject,
+          message: formData.message,
+          to_email: "shuvrobiswas404@gmail.com",
+        },
+        { publicKey: PUBLIC_KEY }
+      );
+
+      setFormData({ name: "", email: "", subject: "", message: "" });
+      setStatus("success");
+      setShowToast(true);
+    } catch (err) {
+      console.error("EmailJS send failed:", err);
+      setStatus("error");
+      setShowToast(true);
+    }
   };
 
   useEffect(() => {
@@ -64,7 +97,7 @@ export default function Contact() {
                     mail
                   </span>
                   <span className="font-label-mono text-label-mono">
-                    shuvro@gmail.com
+                    shuvrobiswas404@gmail.com
                   </span>
                 </div>
                 <div className="flex items-center gap-4 text-on-surface-variant">
@@ -129,6 +162,20 @@ export default function Contact() {
                 </div>
                 <div className="space-y-2">
                   <label className="font-label-mono text-[10px] text-primary uppercase tracking-widest">
+                    Subject
+                  </label>
+                  <input
+                    name="subject"
+                    value={formData.subject}
+                    onChange={handleInputChange}
+                    className="w-full bg-surface-container-lowest border border-outline-variant rounded p-4 text-on-surface focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all font-body-md text-body-md placeholder:text-on-surface-variant/30"
+                    placeholder="Project inquiry"
+                    type="text"
+                    required
+                  />
+                </div>
+                <div className="space-y-2">
+                  <label className="font-label-mono text-[10px] text-primary uppercase tracking-widest">
                     Message
                   </label>
                   <textarea
@@ -143,9 +190,10 @@ export default function Contact() {
                 </div>
                 <button
                   type="submit"
-                  className="w-full bg-primary text-background font-label-mono text-label-mono py-4 px-6 rounded-lg hover:opacity-90 hover:scale-[1.02] transition-all shadow-lg shadow-primary/10 flex items-center justify-center gap-2"
+                  disabled={status === "sending"}
+                  className="w-full bg-primary text-background font-label-mono text-label-mono py-4 px-6 rounded-lg hover:opacity-90 hover:scale-[1.02] transition-all shadow-lg shadow-primary/10 flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
                 >
-                  <span>SEND_MESSAGE</span>
+                  <span>{status === "sending" ? "SENDING..." : "SEND_MESSAGE"}</span>
                   <span className="material-symbols-outlined text-sm">
                     send
                   </span>
@@ -156,7 +204,7 @@ export default function Contact() {
         </div>
       </section>
 
-      <Toast show={showToast} />
+      <Toast show={showToast} status={status === "error" ? "error" : "success"} />
     </>
   );
 }
