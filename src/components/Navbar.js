@@ -1,9 +1,10 @@
 "use client";
 
+
 import { useState } from "react";
 
 const NAV_LINKS = [
-  { id: "home", label: "Home" },
+  
   { id: "about", label: "About" },
   { id: "skills", label: "Skills" },
   { id: "projects", label: "Projects" },
@@ -21,10 +22,10 @@ export default function Navbar({ activeSection, setActiveSection }) {
   return (
     <nav className="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-md border-b border-outline-variant bg-opacity-70">
       <div className="flex justify-between items-center h-16 px-margin-mobile md:px-margin-desktop max-w-max-width mx-auto">
-        <div className="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg font-bold text-primary">
+        <a onClick={() => setActiveSection("home")} href="#home" className="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg font-bold text-primary">
           <span className="font-label-mono tracking-tighter">SHUVRO</span>
           <span className="text-primary">.DEV</span>
-        </div>
+        </a>
 
         <div className="hidden md:flex gap-unit*8 font-label-mono text-label-mono">
           {NAV_LINKS.map((link) => (
