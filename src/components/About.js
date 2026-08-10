@@ -46,12 +46,11 @@ export default function About() {
           <div className="space-y-6 pt-8 md:pt-0">
             <p className="text-on-surface-variant leading-relaxed">
               Hi there! I'm <strong className="text-on-surface">Shuvro Biswas</strong>,
-              a full-stack junior <strong className="text-on-surface">MERN developer </strong>
-              focused on building fast, scalable, and user-friendly web
+              a full-stack junior <strong className="text-on-surface">MERN developer</strong>  focused on building fast, scalable, and user-friendly web
               applications from end to end.
             </p>
             <p className="text-on-surface-variant leading-relaxed">
-              I specialize in building responsive, high-performance user interfaces using
+              I specialize in building responsive, high-performance user interfaces using 
               <strong className="text-on-surface"> React, Next.js, and Tailwind CSS.</strong>{" "}
               On the backend, I develop{" "}
               <strong className="text-on-surface">RESTful APIs</strong> with{" "}
