@@ -1,9 +1,8 @@
 "use client";
 
-import { motion } from "framer-motion";
 import Image from "next/image";
 
-// আপনার দেওয়া স্কিলগুলোর ডেটা একসাথে একটি অ্যারেতে করা হলো
+// আপনার দেওয়া স্কিলগুলোর ডেটা একসাথে একটি অ্যারেতে করা হলো
 const allSkills = [
   { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg", name: "HTML5" },
   { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg", name: "CSS3" },
@@ -24,21 +23,15 @@ const allSkills = [
 export default function Marquee() {
   return (
     <div className="w-full overflow-hidden py-8 border-y border-outline-variant bg-surface-container-low relative">
-      {/* দুইপাশে ফেড ইফেক্ট দেওয়ার জন্য গ্রিয়েন্ট (ঐচ্ছিক, দেখতে সুন্দর লাগে) */}
+      {/* দুইপাশে ফেড ইফেক্ট দেওয়ার জন্য গ্রেডিয়েন্ট */}
       <div className="absolute left-0 top-0 bottom-0 w-20 bg-linear-to-r from-background to-transparent z-10 pointer-events-none"></div>
       <div className="absolute right-0 top-0 bottom-0 w-20 bg-linear-to-l from-background to-transparent z-10 pointer-events-none"></div>
 
-      <motion.div
-        className="flex gap-12 whitespace-nowrap items-center"
-        initial={{ x: "0%" }}
-        animate={{ x: "-50%" }}
-        transition={{
-          duration: 25, // গতি কমাতে বা বাড়াতে পারেন
-          repeat: Infinity,
-          ease: "linear",
-        }}
-      >
-        {/* লুপ স্মুথ রাখার জন্য অ্যারে দুইবার ম্যাপ করা হয়েছে */}
+      {/* CSS-driven animation (see .animate-marquee in globals.css) instead of
+          a Framer Motion JS tween — keeps it smooth on mobile since it runs
+          on the compositor thread, not the main JS thread. */}
+      <div className="flex w-max gap-12 whitespace-nowrap items-center animate-marquee hover:[animation-play-state:paused]">
+        {/* লুপ স্মুথ রাখার জন্য অ্যারে দুইবার ম্যাপ করা হয়েছে */}
         {[...allSkills, ...allSkills].map((skill, index) => (
           <div
             key={index}
@@ -58,7 +51,7 @@ export default function Marquee() {
             </span>
           </div>
         ))}
-      </motion.div>
+      </div>
     </div>
   );
 }
