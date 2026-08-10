@@ -46,13 +46,13 @@ export default function About() {
           <div className="space-y-6 pt-8 md:pt-0">
             <p className="text-on-surface-variant leading-relaxed">
               Hi there! I'm <strong className="text-on-surface">Shuvro Biswas</strong>,
-              a full-stack junior <strong className="text-on-surface">MERN developer</strong>
+              a full-stack junior <strong className="text-on-surface">MERN developer </strong>
               focused on building fast, scalable, and user-friendly web
               applications from end to end.
             </p>
             <p className="text-on-surface-variant leading-relaxed">
               I specialize in building responsive, high-performance user interfaces using
-              <strong className="text-on-surface">React, Next.js, and Tailwind CSS.</strong>{" "}
+              <strong className="text-on-surface"> React, Next.js, and Tailwind CSS.</strong>{" "}
               On the backend, I develop{" "}
               <strong className="text-on-surface">RESTful APIs</strong> with{" "}
               <strong className="text-on-surface">Node.js and Express.js</strong>, backed by{" "}
@@ -62,14 +62,13 @@ export default function About() {
               for payment systems.
             </p>
             <p className="text-on-surface-variant leading-relaxed">
-              I might be new to professional client projects, but I’ve been consistently building and experimenting to master my craft. For me <strong className="text-on-surface">the right time to start is right now,</strong>,
+              I might be new to professional client projects, but I’ve been consistently building and experimenting to master my craft. For me <strong className="text-on-surface">the right time to start is right now, </strong>
               and every single project gets me one step closer to my ultimate career goals.
             </p>
             <p className="text-on-surface-variant leading-relaxed">
               I'm always looking forward to
               <strong className="text-on-surface"> collaborating on meaningful projects</strong> and 
-              <strong className="text-on-surface"> leveling up my development skills</strong> If you're searching for a quick learner who is deeply passionate about tech, let's connect
-              — let's connect!
+              <strong className="text-on-surface"> leveling up my development skills</strong> If you're searching for a quick learner who is deeply passionate about tech, — let's connect!
             </p>
           </div>
         </div>
