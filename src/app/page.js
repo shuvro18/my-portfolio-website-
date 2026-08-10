@@ -8,6 +8,7 @@ import Skills from "../components/Skills";
 import Projects from "../components/Projects";
 import Contact from "../components/Contact";
 import Footer from "../components/Footer";
+import SectionTransition from "../components/SectionTransition";
 
 export default function Home() {
   const [activeSection, setActiveSection] = useState("home");
@@ -41,14 +42,26 @@ export default function Home() {
       <Navbar activeSection={activeSection} setActiveSection={setActiveSection} />
 
       <main className="grow pt-16">
-        <Hero />
-        <About />
-        <Skills />
-        <Projects />
-        <Contact />
+        <SectionTransition direction={-1}>
+          <Hero />
+        </SectionTransition>
+        <SectionTransition>
+          <About />
+        </SectionTransition>
+        <SectionTransition delay={0.05}>
+          <Skills />
+        </SectionTransition>
+        <SectionTransition delay={0.08}>
+          <Projects />
+        </SectionTransition>
+        <SectionTransition delay={0.1}>
+          <Contact />
+        </SectionTransition>
       </main>
 
-      <Footer />
+      <SectionTransition direction={-1} delay={0.05}>
+        <Footer />
+      </SectionTransition>
     </>
   );
 }

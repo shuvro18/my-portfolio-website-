@@ -129,8 +129,24 @@
 
 /* Global scroll and material symbols styling */
 html {
-  scroll-behavior: smooth;
   scroll-padding-top: 4rem; /* Offset for sticky navbar */
+}
+
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
 }
 
 .material-symbols-outlined {
@@ -163,4 +179,53 @@ html {
 .animate-marquee {
   animation: marquee-scroll 25s linear infinite;
   will-change: transform;
+}
+
+/* Interactive hover: scale up + shadow glow only */
+.hover-glow {
+  transition:
+    transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.hover-glow:hover {
+  transform: scale(1.04);
+  box-shadow:
+    0 0 28px color-mix(in srgb, var(--color-primary) 35%, transparent),
+    0 8px 32px color-mix(in srgb, var(--color-primary) 15%, transparent);
+}
+
+.hover-card-glow {
+  transition:
+    transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.hover-card-glow:hover {
+  transform: scale(1.03) translateY(-4px);
+  box-shadow:
+    0 0 32px color-mix(in srgb, var(--color-primary) 25%, transparent),
+    0 16px 48px color-mix(in srgb, var(--color-background) 60%, transparent);
+}
+
+.hover-image-invert {
+  transition:
+    transform 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+    filter 0.5s ease;
+}
+
+.group:hover .hover-image-invert {
+  transform: scale(1.06);
+  filter: brightness(1.15) saturate(1.2);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hover-glow:hover,
+  .hover-card-glow:hover {
+    transform: none;
+  }
+
+  .group:hover .hover-image-invert {
+    transform: none;
+  }
 }

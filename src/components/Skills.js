@@ -27,7 +27,7 @@ const TOOLS_SKILLS = [
 
 function SkillCard({ title, items }) {
   return (
-    <div className="bg-surface-container-low border border-outline-variant rounded-xl p-6 space-y-6">
+    <div className="bg-surface-container-low border border-outline-variant rounded-xl p-6 space-y-6 hover-card-glow">
       <div className="flex items-center gap-2">
         <span className="h-px w-3 bg-primary"></span>
         <h3 className="font-label-mono text-label-mono text-primary tracking-widest uppercase">

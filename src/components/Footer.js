@@ -7,25 +7,25 @@ export default function Footer() {
         </div>
         <div className="flex gap-6 font-body-md text-body-md">
           <a
-            className="text-on-surface-variant hover:text-primary transition-colors opacity-80 hover:opacity-100"
+            className="text-on-surface-variant hover-glow rounded px-2 py-1 opacity-80"
             href="https://github.com/shuvro18"
           >
             GitHub
           </a>
           <a
-            className="text-on-surface-variant hover:text-primary transition-colors opacity-80 hover:opacity-100"
+            className="text-on-surface-variant hover-glow rounded px-2 py-1 opacity-80"
             href="https://www.linkedin.com/in/shuvro-biswas-nayon/"
           >
             LinkedIn
           </a>
           {/* <a
-            className="text-on-surface-variant hover:text-primary transition-colors opacity-80 hover:opacity-100"
+            className="text-on-surface-variant hover-glow rounded px-2 py-1 opacity-80"
             href="#"
           >
             Twitter
           </a> */}
           <a
-            className="text-on-surface-variant hover:text-primary transition-colors opacity-80 hover:opacity-100"
+            className="text-on-surface-variant hover-glow rounded px-2 py-1 opacity-80"
             href="#"
           >
             Resume

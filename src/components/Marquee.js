@@ -35,7 +35,7 @@ export default function Marquee() {
         {[...allSkills, ...allSkills].map((skill, index) => (
           <div
             key={index}
-            className="flex items-center gap-3 px-6 py-3 bg-surface-container-lowest border border-outline-variant rounded-xl shadow-sm shrink-0 hover:border-primary transition-all"
+            className="flex items-center gap-3 px-6 py-3 bg-surface-container-lowest border border-outline-variant rounded-xl shadow-sm shrink-0 hover-card-glow"
           >
             <div className="w-6 h-6 relative flex items-center justify-center">
               <Image

@@ -1,4 +1,6 @@
 import { Geist, Inter, JetBrains_Mono } from "next/font/google";
+import SmoothScroll from "../components/SmoothScroll";
+import TransitionProvider from "../components/TransitionProvider";
 import "./globals.css";
 
 const geist = Geist({
@@ -35,7 +37,9 @@ export default function RootLayout({ children }) {
         />
       </head>
       <body className="bg-background text-on-background font-body-md min-h-screen flex flex-col">
-        {children}
+        <SmoothScroll>
+          <TransitionProvider>{children}</TransitionProvider>
+        </SmoothScroll>
       </body>
     </html>
   );

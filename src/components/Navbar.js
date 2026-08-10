@@ -1,7 +1,8 @@
 "use client";
 
-
 import { useState } from "react";
+import { useLenis } from "lenis/react";
+import { useSectionTransition } from "./TransitionProvider";
 
 const NAV_LINKS = [
   
@@ -13,16 +14,25 @@ const NAV_LINKS = [
 
 export default function Navbar({ activeSection, setActiveSection }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const lenis = useLenis();
+  const { triggerSectionTransition } = useSectionTransition() ?? {};
 
-  const handleNavClick = (id) => {
+  const scrollToSection = (id, e) => {
+    e?.preventDefault();
     setActiveSection(id);
     setMobileMenuOpen(false);
+    triggerSectionTransition?.(900);
+    lenis?.scrollTo(`#${id}`, { offset: -64, duration: 1.4 });
   };
 
   return (
     <nav className="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-md border-b border-outline-variant bg-opacity-70">
       <div className="flex justify-between items-center h-16 px-margin-mobile md:px-margin-desktop max-w-max-width mx-auto">
-        <a onClick={() => setActiveSection("home")} href="#home" className="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg font-bold text-primary">
+        <a
+          onClick={(e) => scrollToSection("home", e)}
+          href="#home"
+          className="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg font-bold text-primary hover-glow rounded-lg px-2 py-1"
+        >
           <span className="font-label-mono tracking-tighter">SHUVRO</span>
           <span className="text-primary">.DEV</span>
         </a>
@@ -31,9 +41,9 @@ export default function Navbar({ activeSection, setActiveSection }) {
           {NAV_LINKS.map((link) => (
             <a
               key={link.id}
-              onClick={() => setActiveSection(link.id)}
+              onClick={(e) => scrollToSection(link.id, e)}
               href={`#${link.id}`}
-              className={`relative group transition-colors duration-200 ${
+              className={`relative group transition-colors duration-200 hover-glow rounded px-2 py-1 ${
                 activeSection === link.id
                   ? "text-primary"
                   : "text-on-surface-variant hover:text-primary"
@@ -51,7 +61,7 @@ export default function Navbar({ activeSection, setActiveSection }) {
           ))}
         </div>
 
-        <button className="bg-primary text-background font-label-mono text-label-mono py-2 px-6 rounded-full hover:opacity-90 hover:scale-105 transition-all duration-200 shadow-lg shadow-primary/20 hidden md:block">
+        <button className="bg-primary text-background font-label-mono text-label-mono py-2 px-6 rounded-full hover-glow hidden md:block">
           download Resume
         </button>
 
@@ -77,12 +87,12 @@ export default function Navbar({ activeSection, setActiveSection }) {
                   : "text-on-surface-variant hover:text-primary"
               }`}
               href={`#${link.id}`}
-              onClick={() => handleNavClick(link.id)}
+              onClick={(e) => scrollToSection(link.id, e)}
             >
               {link.label}
             </a>
           ))}
-          <button className="w-full bg-primary text-background py-3 rounded-lg hover:opacity-90 transition-opacity">
+          <button className="w-full bg-primary text-background py-3 rounded-lg hover-glow">
             Download Resume
           </button>
         </div>

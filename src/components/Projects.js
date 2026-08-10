@@ -1,4 +1,5 @@
 import ProjectCard from "./ProjectCard";
+import { Parallax, ScrollDepth } from "./ScrollEffects";
 
 const PROJECTS = [
   {
@@ -39,19 +40,33 @@ const PROJECTS = [
 export default function Projects() {
   return (
     <section
-      className="py-24 px-margin-mobile md:px-margin-desktop bg-background"
+      className="py-24 px-margin-mobile md:px-margin-desktop bg-background relative overflow-hidden"
       id="projects"
     >
-      <div className="max-w-max-width mx-auto space-y-12">
-        <div className="flex items-center gap-4">
-          <h2 className="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface">
-            Projects
-          </h2>
-          <div className="h-px grow bg-outline-variant"></div>
-        </div>
+      <div className="absolute inset-0 opacity-[0.06] pointer-events-none" aria-hidden>
+        <Parallax speed={50} className="h-[130%] -top-[15%]">
+          <div
+            className="w-full h-full"
+            style={{
+              backgroundImage:
+                "radial-gradient(ellipse at 80% 40%, #34d399 0%, transparent 50%)",
+            }}
+          />
+        </Parallax>
+      </div>
+
+      <div className="max-w-max-width mx-auto space-y-12 relative z-10">
+        <ScrollDepth yOffset={36} scaleFrom={0.96}>
+          <div className="flex items-center gap-4">
+            <h2 className="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface">
+              Projects
+            </h2>
+            <div className="h-px grow bg-outline-variant"></div>
+          </div>
+        </ScrollDepth>
         <div className="grid md:grid-cols-3 gap-gutter">
-          {PROJECTS.map((project) => (
-            <ProjectCard key={project.title} {...project} />
+          {PROJECTS.map((project, index) => (
+            <ProjectCard key={project.title} {...project} index={index} />
           ))}
         </div>
       </div>

@@ -1,4 +1,5 @@
 import Marquee from "./Marquee";
+import { ParallaxLayer, ScrollDepth } from "./ScrollEffects";
 
 export default function Hero() {
   return (
@@ -7,15 +8,16 @@ export default function Hero() {
         className="min-h-[80vh] flex items-center justify-center relative overflow-hidden px-margin-mobile md:px-margin-desktop"
         id="home"
       >
-        <div
-          className="absolute inset-0 z-0 opacity-20"
+        <ParallaxLayer
+          className="opacity-20"
           style={{
             backgroundImage:
               "radial-gradient(circle at center, #0f3e27 0%, transparent 70%)",
           }}
-        ></div>
+          speed={0.4}
+        />
         <div className="max-w-max-width w-full z-10 grid md:grid-cols-2 gap-gutter items-center">
-          <div className="space-y-6">
+          <ScrollDepth yOffset={56} scaleFrom={0.9} className="space-y-6">
             <h1 className="font-headline-xl text-headline-xl text-primary">
               Full Stack Precision.
             </h1>
@@ -26,7 +28,7 @@ export default function Hero() {
             <div className="flex gap-4 pt-4">
               <a
                 href="#contact"
-                className="bg-primary text-background font-label-mono text-label-mono py-3 px-6 rounded hover:opacity-90 transition-opacity flex items-center justify-center"
+                className="bg-primary text-background font-label-mono text-label-mono py-3 px-6 rounded hover-glow flex items-center justify-center"
               >
                 Hire Me
               </a>
@@ -34,15 +36,21 @@ export default function Hero() {
                 href="https://github.com/shuvro18"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="border border-outline text-on-surface font-label-mono text-label-mono py-3 px-6 rounded hover:border-primary hover:text-primary transition-colors flex items-center justify-center"
+                className="border border-outline text-on-surface font-label-mono text-label-mono py-3 px-6 rounded hover-glow flex items-center justify-center"
               >
                 View GitHub
               </a>
             </div>
-            <p className=" font-headline-xl text-headline-xl text-primary">I have done <span className="text-7xl ">10+</span> projects</p>
-          </div>
-          <div className="hidden md:block">
-            <div className="bg-surface rounded border border-outline-variant p-4 shadow-lg">
+            <p className=" font-headline-xl text-headline-xl text-primary">
+              I have done <span className="text-7xl ">10+</span> projects
+            </p>
+          </ScrollDepth>
+          <ScrollDepth
+            yOffset={72}
+            scaleFrom={0.88}
+            className="hidden md:block"
+          >
+            <div className="bg-surface rounded border border-outline-variant p-4 shadow-lg hover-card-glow">
               <div className="flex gap-2 mb-4 border-b border-outline-variant pb-2">
                 <div className="w-3 h-3 rounded-full bg-error"></div>
                 <div className="w-3 h-3 rounded-full bg-tertiary"></div>
@@ -95,12 +103,11 @@ export default function Hero() {
                 </code>
               </pre>
             </div>
-          </div>
+          </ScrollDepth>
         </div>
       </section>
 
-      <Marquee/>
-      
+      <Marquee />
     </div>
   );
 }

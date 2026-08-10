@@ -109,14 +109,14 @@ export default function Contact() {
                   </span>
                 </div>
                 <div className="flex items-center gap-3">
-                  <Link href={"https://www.linkedin.com/in/shuvro-biswas-nayon"} className="flex gap-2 items-center cursor-pointer px-4 py-2 bg-surface-container-low rounded-sm border border-outline hover:border-primary hover:text-primary">
+                  <Link href={"https://www.linkedin.com/in/shuvro-biswas-nayon"} className="flex gap-2 items-center cursor-pointer px-4 py-2 bg-surface-container-low rounded-sm border border-outline hover-glow">
                     <FaLinkedin className="material-symbols-outlined text-primary" />
                     <span className="font-label-mono text-label-mono">
                       {" "}
                       Linkedin{" "}
                     </span>
                   </Link>
-                  <Link href={"https://github.com/shuvro18"} className="flex gap-2 items-center cursor-pointer px-4 py-2 bg-surface-container-low rounded-sm border border-outline hover:border-primary hover:text-primary">
+                  <Link href={"https://github.com/shuvro18"} className="flex gap-2 items-center cursor-pointer px-4 py-2 bg-surface-container-low rounded-sm border border-outline hover-glow">
                     <FaGithub className="material-symbols-outlined text-primary" />
                     <span className="font-label-mono text-label-mono">
                       Github
@@ -125,7 +125,7 @@ export default function Contact() {
                 </div>
               </div>
             </div>
-            <div className="bg-surface-container-low border border-outline-variant rounded-xl p-8 shadow-2xl relative overflow-hidden">
+            <div className="bg-surface-container-low border border-outline-variant rounded-xl p-8 shadow-2xl relative overflow-hidden hover-card-glow">
               <div className="absolute top-0 right-0 p-4 opacity-10">
                 <span className="material-symbols-outlined text-[80px]">
                   terminal
@@ -191,7 +191,7 @@ export default function Contact() {
                 <button
                   type="submit"
                   disabled={status === "sending"}
-                  className="w-full bg-primary text-background font-label-mono text-label-mono py-4 px-6 rounded-lg hover:opacity-90 hover:scale-[1.02] transition-all shadow-lg shadow-primary/10 flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
+                  className="w-full bg-primary text-background font-label-mono text-label-mono py-4 px-6 rounded-lg hover-glow flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100 disabled:hover:shadow-none"
                 >
                   <span>{status === "sending" ? "SENDING..." : "SEND_MESSAGE"}</span>
                   <span className="material-symbols-outlined text-sm">
