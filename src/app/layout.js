@@ -19,7 +19,7 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata = {
-  title: "MERN Stack Developer | Full Stack Precision",
+  title: "SHUVRO BISWAS",
   description: "Crafting scalable web applications with the MERN stack. Engineered for performance, designed for clarity.",
 };
 
