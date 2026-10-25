@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { useLenis } from "lenis/react";
 import { useSectionTransition } from "./TransitionProvider";
+import Link from "next/link";
 
 const NAV_LINKS = [
   
@@ -61,9 +62,13 @@ export default function Navbar({ activeSection, setActiveSection }) {
           ))}
         </div>
 
-        <button className="bg-primary text-background font-label-mono text-label-mono py-2 px-6 rounded-full hover-glow hidden md:block">
+        <Link href="/Shuvro Biswas Nayon Resume.pdf"
+         download="Shuvro_Resume.pdf"
+         target="_blank"
+         rel="noopener noreferrer"
+         className="bg-primary text-background font-label-mono text-label-mono py-2 px-6 rounded-full hover-glow hidden md:block">
           download Resume
-        </button>
+        </Link>
 
         <button
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
