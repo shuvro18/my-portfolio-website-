@@ -109,14 +109,14 @@ export default function Contact() {
                   </span>
                 </div>
                 <div className="flex items-center gap-3">
-                  <Link href={"https://www.linkedin.com/in/shuvro-biswas-nayon"} className="flex gap-2 items-center cursor-pointer px-4 py-2 bg-surface-container-low rounded-sm border border-outline hover-glow">
+                  <Link target="_blank" href={"https://www.linkedin.com/in/shuvro-biswas-nayon"} className="flex gap-2 items-center cursor-pointer px-4 py-2 bg-surface-container-low rounded-sm border border-outline hover-glow">
                     <FaLinkedin className="material-symbols-outlined text-primary" />
                     <span className="font-label-mono text-label-mono">
                       {" "}
                       Linkedin{" "}
                     </span>
                   </Link>
-                  <Link href={"https://github.com/shuvro18"} className="flex gap-2 items-center cursor-pointer px-4 py-2 bg-surface-container-low rounded-sm border border-outline hover-glow">
+                  <Link target="_blank" href={"https://github.com/shuvro18"} className="flex gap-2 items-center cursor-pointer px-4 py-2 bg-surface-container-low rounded-sm border border-outline hover-glow">
                     <FaGithub className="material-symbols-outlined text-primary" />
                     <span className="font-label-mono text-label-mono">
                       Github

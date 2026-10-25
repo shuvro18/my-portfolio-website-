@@ -6,7 +6,6 @@ import { useSectionTransition } from "./TransitionProvider";
 import Link from "next/link";
 
 const NAV_LINKS = [
-  
   { id: "about", label: "About" },
   { id: "skills", label: "Skills" },
   { id: "projects", label: "Projects" },
@@ -62,11 +61,13 @@ export default function Navbar({ activeSection, setActiveSection }) {
           ))}
         </div>
 
-        <Link href="/Shuvro Biswas Nayon Resume.pdf"
-         download="Shuvro_Resume.pdf"
-         target="_blank"
-         rel="noopener noreferrer"
-         className="bg-primary text-background font-label-mono text-label-mono py-2 px-6 rounded-full hover-glow hidden md:block">
+        <Link
+          href="/Shuvro Biswas Nayon Resume.pdf"
+          download="Shuvro_Resume.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="bg-primary text-background font-label-mono text-label-mono py-2 px-6 rounded-full hover-glow hidden md:block"
+        >
           download Resume
         </Link>
 
@@ -97,9 +98,15 @@ export default function Navbar({ activeSection, setActiveSection }) {
               {link.label}
             </a>
           ))}
-          <button className="w-full bg-primary text-background py-3 rounded-lg hover-glow">
-            Download Resume
-          </button>
+          <Link
+            href="/Shuvro Biswas Nayon Resume.pdf"
+            download="Shuvro_Resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-primary text-background font-label-mono text-label-mono py-2 px-6 rounded-full hover-glow hidden md:block"
+          >
+            download Resume
+          </Link>
         </div>
       )}
     </nav>
